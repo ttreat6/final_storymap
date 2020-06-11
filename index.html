@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Conversations of Color on Twitter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--meta data for sharing links on Facebook-->
+    <meta property="og:title" content="Conversations of Color on Twitter"/>
+    <meta property="og:url" content="http://geoviz.ceoas.oregonstate.edu/storymap/examples/2.5/video.html"/>
+    <meta property="og:description" content="This is an example of a storymap."/>
+    <meta property="og:image" content="../../img/social.png"/>
+
+    <!--add required stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--leaflet css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+
+    <!--add favicon for the web page-->
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="css/storymap.2.5.css">
+    <!--add required libraries-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <!--jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!--boostrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--leaflet.ajax for asynchronously adding geojson data-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <!--mini globle map-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="../../js/globeminimap.js"></script>
+
+    <!--story map plugin-->
+    <script src="js/storymap.2.5.js"></script>
+</head>
+<body>
+
+<div id="storymap" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 storymap-story">
+            <section data-scene="overview" data-background="img/blm.mp4">
+                <div class="fullscreen text-center">
+
+                    <h1 class="display-4 d-flex justify-content-center">Black Lives Matter Movement</h1>
+
+
+                    <small class="d-flex justify-content-center" style="color: rgba(255,255,255,0.95)">This story map
+                        disscusses the conversation of the BLM
+                        movement on Twitter and dicusses geo based trends.
+                    </small>
+                </div>
+            </section>
+            <section data-scene="blm">
+              <h2>Black Lives Matter</h2>
+              <img src="img/handsup.jpg" width="100%">
+                <p>The map to the right portrays the tweets that are in favor and or supportive of the
+                  black lives matter movement and were found and collected by using a twitter api
+                  to scan through tweets with the key words/statement "Black Lives Matter" and BLM/blm. </p>
+                <p>ADD ANALYSIS </p>
+                  <img src="img/partymap.png" width="100%">
+            </section>
+
+            <section data-scene="Opposition">
+                <h2>Opposition</h2>
+                <p>The map to the right portrays the tweets that are against and or lean to the "All Lives Matter"
+                  stand point. While all lives certainly do matter, the current and apparent need to abolish
+                  systemic racism of the world and the opression of the black communities and people of color takes
+                  priority. This section shows the regional trends of tweets involving "all lives matter" and other
+                  oppositional key words. These tweets were also found and collected by using a twitter api
+                  to scan through tweets with the key words/statement such as "All Lives Matter". </p>
+                <p>ADD ANALYSIS </p>
+                  <img src="img/partymap.png" width="100%">
+            </section>
+
+            <section data-scene="comparison">
+                <h2>Comparison</h2>
+                <p>By combinging both point types into a singular map and looking to the image of the partymap
+                  just below we can see the clear and obvious trends of the types of the tweets and their
+                  locations to the majority party of their respective states.</p>
+                <p>GO MORE INDEPTH</p>
+                <img src="img/partymap.png" width="100%">
+            </section>
+
+            <section data-scene="Help">
+                <h2>How to Help</h2>
+                <p>The best way to help is to stay informed. The following map shows the major cities participating
+                in large scale protests that have set up funds and organizations to provide information for those who
+                wish to learn more and to collect finacial aid to help pay for resources, bail funds, and help
+                pay for funeral expensises and provide for the families who've lost loved ones to police bruitality
+                and other hate crimes.</p>
+                <p>GO MORE INDEPTH</p>
+                <img src="img/partymap.png" width="100%">
+            </section>
+
+            <section data-scene="end" data-background="img/blm.jpg">
+                <div class="fullscreen text-center">
+                    <h1 class="display-4 d-flex justify-content-center">Thanks You and Stay Informed!</h1>
+                    <small class="d-flex justify-content-center" style="color: rgba(255,255,255,0.95)">Your
+                        Acknowledgement goes here
+                    </small>
+                </div>
+            </section>
+
+        </div>
+        <!--map div-->
+        <div class="col-sm-6 col-md-8 storymap-map"></div>
+    </div>
+
+
+    <dl>
+        <dt>
+            <!--facebook icon-->
+            <a class="fab fa-facebook-square btn"
+               href="https://facebook.com/sharer.php?u=http://geoviz.ceoas.oregonstate.edu/storymap/examples/2.5/video.html"
+               target="_blank"></a>
+        </dt>
+        <dt>
+            <!--facebook icon-->
+            <a class="fab fa-github btn" href="https://github.com/jakobzhao/storymap" style="top:40px"
+               target="_blank"></a>
+        </dt>
+        <dt>
+            <!--info icon-->
+            <i class="fas fa-info-circle btn" style="top:60px" data-toggle="modal" data-target="#info-modal"></i>
+        </dt>
+    </dl>
+
+    <!--the info page-->
+    <div class="modal fade" id="info-modal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This is a story map that was created as the final project for GEOG 458:
+                      Advanced Digital Geographies at the University of Washington, Seattle. Spring Quarter 2020.
+                      This story map was designed to bring about the conversation of regional trending of those for
+                      the Black Lives Matter movement versus fascists, those opposed, and or anyone 'ignorant' to the
+                      situation, by using geo located tweets. This map also delves into an analysis on the connection between
+                      so those for or against the movement, their respective locations, and whether or not they
+                      correlate to the party majority of the home state of location.
+                        The story map library is derived from the
+                        storymap plugin for leaflet at <a>http://atlefren.github.io/storymap/</a>, and its functionality
+                        relies on both leaflet and Boostrap.</p>
+                    <p><b>Author: Tyler Treat</b> | University of Washington | <a href="https://github.com/ttreat6" target="_blank">github</a></p>
+                    <p><b>storymap.js</b> | Released Date: 02/20/2017 | Version: 2.5 | MIT License </p>
+                    <p><b>Storymap Template: Bo Zhao</b> | <a href="https://github.com/jakobzhao" target="_blank">github</a></p>
+
+                    <p>The <a href="https://www.youtube.com/watch?v=VCmsEva8H6Q" target="_blank">clipped video</a> in background of the
+                        front page was collected from Youtube. </p>
+                    <p>This story map uses geospatial data from mapbox, Open Street Map, and Google Maps.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- main javascript -->
+<script type="text/javascript">
+
+
+    // Create Legend Contents in html format
+    var county_legend = '<i style="background: orange; opacity: 0.5"></i><p><b>Counties</b></p>';
+    var forest_legend = '<i style="background: green; opacity: 0.5"></i><p><b>Forest</b></p>';
+
+    // For each layer, the first variable is the layer, the second is the legend. The layer variable can be any kinds of layers that leaflet.js supports.
+    // var layers = {
+    //      layer1: {layer: layer1, legend: legend1},
+    //      layer2: {layer: layer2, legend: legend2}
+    //      ...
+    // }
+    var redIcon = L.icon({iconUrl: 'assets/pin2.jpg', iconSize: [35,35]});
+
+    var layers = {
+        ESRI: {layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')},
+        counties: {
+            layer: L.geoJson.ajax('assets/counties.geojson', {
+                color: 'orange',
+                weight: 2,
+                opacity: 0.3
+            }), legend: county_legend
+        },
+        GEE: {
+            layer: L.tileLayer('http://earthengine.google.org/static/hansen_2013/tree_alpha/{z}/{x}/{y}.png'),
+            legend: forest_legend
+        },
+        //blm_mark: { layer: L.marker([29.543507, 78.792741], {icon: corbettIcon1}).bindPopup('The Great Bengal Tiger'+'<img src= "assets/img/corbett_tiger1.jpg" width="500">', {maxWidth: "auto"})},
+        blm_mark1: {layer: L.marker([45.5013318,-122.6534998]).bindPopup('<left><br>Charlotte, North Carolina<br><br>"Some of the incredible artists who painted Black Lives Matter on the streets of Charlotte. This city is something s..."<br>(<a href="https://t.co/2WXmNEHIau" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark2: {layer: L.marker([34.020789, -118.411907]).bindPopup('<left><br>Los Angeles, California<br><br>"Blackwardness" leading what should be aware Americans by the nose."<br>', {maxWidth: "100"})},
+        blm_mark3: {layer: L.marker([33.121484, -117.287924]).bindPopup('<left><br>Carlsbad, California<br><br>"@LeonydusJohnson It’s part of a Democrat strategy. It’s about votes and power. They could care less about Black ppl..."<br>(<a href="https://t.co/ggaGbzDJFT " target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark4: {layer: L.marker([31.168893, -100.076888]).bindPopup('<left><br>Eden, Texas<br><br>"Really stupid thing to say. So to assume that ALL COPS is like asking to all black people resist? Do ALL black people..."<br>(<a href="https://t.co/cnCveVlmVn " target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark5: {layer: L.marker([38.498196, -98.319925]).bindPopup('<left><br>Bushton, Kansas<br><br>"a convo with a coworker karen:-i don’t know how to say this so im just gonna ask. so black lives matter right? -yes..."<br>(<a href="https://t.co/tB80Zz6VQS" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark6: {layer: L.marker([40.821786, -74.157263]).bindPopup('<left><br>Nutley, New Jersey<br><br>"good day ended bad. #blacklivesmatter "<br>', {maxWidth: "100"})},
+        blm_mark7: {layer: L.marker([48.214817, -122.330602]).bindPopup('<left><br>Seattle, Washington<br><br>"You can’t support trumps reelection and black lives matter...That don’t make no damn sense @ATT @BankofAmerica..."<br>(<a href="https://t.co/ggaGbzDJFT " target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark8: {layer: L.marker([44.371263, -79.674847]).bindPopup('<left><br>Barrie, Ontario, Canada<br><br>"This Saturday #blacklivesmatter #innisfil stand with us against anti-Black racism. Make Change together. @Barrie360..."<br>(<a href="https://t.co/kRK5pUzW8H" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark9: {layer: L.marker([38.502147, -117.022695]).bindPopup('<left><br>Manhattan, Nevada<br><br>"@vincedemeyere @DrakereidusJim @MarkDice Indeed!  Do all black lives matter in a city forever controlled by Democrats..."<br>(<a href=" https://t.co/rET8K2FrBC" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark10: {layer: L.marker([34.020789, -118.411907]).bindPopup('<left><br>Los Angeles, California<br><br>"You are supposed to respect your citizens are we have constitutional rights here and you should read them that way..."<br>(<a href=" https://t.co/rjGA9gU59A" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark11: {layer: L.marker([39.145024, -75.38646]).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "350"})},
+        blm_mark12: {layer: L.marker([32.678207, -83.173867]).bindPopup('<left><br>Wilkinson County, Georgia<br><br>"@JKelembeck @Yoder_Esqq No. But when you share videos of protesters and cops in conflict its just as much propagan..."<br>(<a href="https://t.co/qK7cnvytAN" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark13: {layer: L.marker([40.594402, -75.189976]).bindPopup('<left><br>Riegelsville, Pennlsyvania<br><br>"A peaceful protest against racism was held in Riegelsville Tuesday. About 100 people demonstrated for equality in ..."<br>(<a href="https://t.co/VvzVCTH1ol" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark14: {layer: L.marker([39.300187, -76.435737]).bindPopup('<left><br>Essex, Maryland<br><br>"Geek culture isn’t suddenly left-wing... it always was. You just grew up to be intolerant. You became the villain i..."<br>(<a href="https://t.co/v5lT7xuOzU" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark15: {layer: L.marker([40.670879, -73.831187]).bindPopup('<left><br>Queens, New York<br><br>"It’s amazing to me that these racist CEOs and shit don’t just keep their mouths shut for their bottom line. But I g..."<br>(<a href="https://t.co/F6wkDdzEoV" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark16: {layer: L.marker([40.680477, -73.998244]).bindPopup('<left><br>Brooklyn, New York<br><br>"#justiceforgeorgefloyd #blacklivesmatter✊🏽✊🏾✊🏿 #blm #policereformnow @ Carroll Gardens..."<br>(<a href="https://t.co/zcUuTCZIdI " target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark17: {layer: L.marker([44.90542, -92.923809]).bindPopup('<left><br>Woodbury, Minnesota<br><br>"DO. NOT. EVER. JUDGE. OR. TREAT. SOMEONE. BASED. ON. PHYSICAL. TRAITS. it really ain’t that hard y’all..."<br>(<a href="https://t.co/fAgw7A5oQ9" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark18: {layer: L.marker([29.838495, -95.446486]).bindPopup('<left><br>Houston, Texas<br><br>"Justice for Jamarion Robinson - Sign the Petition! https://t.co/ZgoiuP3cJX via @Change #BlackLivesMatter...', {maxWidth: "100"})},
+        blm_mark19: {layer: L.marker([47.614817, -122.330602]).bindPopup('<left><br>Seattle, Washington<br><br>"Honestly shocked (but also not) at the fake news that’s already out there re: Autonomous Zone..."<br>(<a href="https://t.co/Llx8k21mS4" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark20: {layer: L.marker([38.99626, -84.688001]).bindPopup('<left><br>Oakbrook, Kentucky<br><br>" When your not smart enough to know the  real oppressors your doomed to their oppression', {maxWidth: "100"})},
+        blm_mark21: {layer: L.marker([32.678207, -83.173867]).bindPopup('<left><br>Allentown, Georgia<br><br>"This Friday in Austell at the Georgia Post @WhereProtest #atlprotests #BLMprotest ..."<br>(<a href="https://t.co/tkWu8p6GEj" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark22: {layer: L.marker([35.346902, -119.025163]).bindPopup('<left><br>Bakersfield, California<br><br>"A few days ago a video of a racist white woman verbally attacking a protester and her daughter went viral. The woman..."<br>(<a href="https://t.co/DGDtM3JHK7" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        blm_mark23: {layer: L.marker([40.2309223,-75.0508479]).bindPopup('<left><br>Trenton, New York<br><br>"Being interviewed on #BlackLivesMatter by #UK journalist David Taylor #GeorgeFloyd #LaquanMcDonald @NiggaTheory..."<br>(<a href="https://t.co/uT7Il1MOXc" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //blm_mark13: {layer: L.marker([40.594402, -75.189976]).bindPopup('<left><br>Riegelsville, Pennlsyvania<br><br>"A peaceful protest against racism was held in Riegelsville Tuesday. About 100 people demonstrated for equality in ..."<br>(<a href="https://t.co/VvzVCTH1ol" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //blm_mark13: {layer: L.marker([40.594402, -75.189976]).bindPopup('<left><br>Riegelsville, Pennlsyvania<br><br>"A peaceful protest against racism was held in Riegelsville Tuesday. About 100 people demonstrated for equality in ..."<br>(<a href="https://t.co/VvzVCTH1ol" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+
+
+
+
+        alm_mark1: { layer: L.marker([42.8443276,-81.0939236], {icon: redIcon}).bindPopup('<left><br>North Madison, Ohio<br><br>"Done! Owner of factory burned in Floyd riots says he is taking company out of Minneapolis...(<a href=" https://t.co/MJNKwfrGKS" target="_blank">source</a>)"<br>(<a href=" https://t.co/pPcVZZFML8" target="_blank">Tweet</a>)<br>', {maxWidth: "auto"})},
+        alm_mark2: {layer: L.marker([41.36516, -82.669467], {icon: redIcon}).bindPopup('<left><br>Sparta, Ohio<br><br>" @wkyc @marknaymik Can’t we stop all of this bullshit? All lives matter! black white yellow and all shades of tan!..."<br>(<a href="https://t.co/w23TOnlgul" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark3: {layer: L.marker([33.75286, -97.781768], {icon: redIcon}).bindPopup('<left><br>Weatherford, Texas<br><br>"@miikell1 @RachelBock9 Same is true for violent crimes. Police and blacks and whites all know that the average young black male is a significantly greater threat..."<br>(<a href="https://t.co/Sd288effqI" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark4: {layer: L.marker([39.003376, -79.420865], {icon: redIcon}).bindPopup('<left><br>Walkers Creek, Virginia<br><br>"@Black4blacks @WVUCavalier @ChrisHurstVA We are a peaceful people who do not force our way on others by intimidation and destr..."<br>(<a href="https://t.co/qSvzNN7qn4" target="_blank">Tweet</a>)<br>', {maxWidth: "350"})},
+        alm_mark5: {layer: L.marker([37.232915, -115.223125], {icon: redIcon}).bindPopup('<left><br>Las Vegas, Nevada<br><br>"I believe there is "A CONSPIRACY THEORY" in our "Government"over this "BLACK LIVES MATTER? and over this "COVID-19..."<br>(<a href="https://t.co/EyaBEVeNjg" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark6: {layer: L.marker([48.273022, -120.882482], {icon: redIcon}).bindPopup('<left><br>Roslyn, Washington<br><br>"We cannot have a peaceful society without law and order. If you to fund the police department you’re asking for law..."<br>(<a href="https://t.co/3xQkNusRWE" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark7: {layer: L.marker([40.145024, -75.38646], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark8: {layer: L.marker([35.168253, -111.931711], {icon: redIcon}).bindPopup('<left><br>Phoenix, Arizona<br><br>"BLM.ONLY TREATS CRIMINAL AS ANGLES.SURE AS HELLNOT THE GOOD https://t.co/Zw2bKVjjZZ FLOYD.WAS A BAD APPLE. Caused h..."<br>(<a href="https://t.co/h8a39PX7br" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark9: {layer: L.marker([28.698682, -82.404475], {icon: redIcon}).bindPopup('<left><br>Clearwater, Florida<br><br>" @natipopi @RustyBatchelor Why are you putting up with these communist Portland ???#AntifaDomesticTerrorists #LockThemUp..."<br>', {maxWidth: "100"})},
+        alm_mark10: {layer: L.marker([34.16793, -95.445729], {icon: redIcon}).bindPopup('<left><br>Tyler, Texas<br><br>"Sports caster in Seattle fired after 40 years because he said: All lives matter. That is it...that is all and he was..."<br>(<a href="https://t.co/4YddjMWPor" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark11: {layer: L.marker([31.9111345,-99.801546], {icon: redIcon}).bindPopup('<left><br>Menard, Texas<br><br>"@realDonaldTrump @BillWalls20 @JayInslee Please send in the Military Now. If you don’t end it now they’ll do this in..."<br>(<a href="https://t.co/SFIXOC7ZGT" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark12: {layer: L.marker([41.263303,-112.1423468], {icon: redIcon}).bindPopup('<left><br>Fairfield, Utah<br><br>"Blaming Christopher columbus for generations of enslavement as well as countless war crimes involving raping and pi..."<br>(<a href="https://t.co/wzRfXoaRwc " target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark13: {layer: L.marker([35.020789, -118.411907], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"@seanhannity Sounds like someone needs to take their medication... #CrazyPills #SayWhat #YouCray  #AntifaTerrorists..."<br>(<a href="https://t.co/Nz1NPeA4vv" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        alm_mark14: {layer: L.marker([38.9562092,-92.3916363], {icon: redIcon}).bindPopup('<left><br>Columbia, Missouri<br><br>"BLM are just a bunch of criminals, manipulated and paid by the usual globalist èlite. Shut up!..."<br>(<a href="https://t.co/v8I2qRZLeq" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //alm_mark7: {layer: L.marker([40.145024, -75.38646], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //alm_mark7: {layer: L.marker([40.145024, -75.38646], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //alm_mark7: {layer: L.marker([40.145024, -75.38646], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //alm_mark7: {layer: L.marker([40.145024, -75.38646], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //alm_mark7: {layer: L.marker([40.145024, -75.38646], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //alm_mark7: {layer: L.marker([40.145024, -75.38646], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+        //alm_mark7: {layer: L.marker([40.145024, -75.38646], {icon: redIcon}).bindPopup('<left><br>Dover, Delaware<br><br>"NO MORE IT IS OBVIOUS THAT THE CRIMINAL POLITICIANS IN MINNESOTA GOVERNMENT WILL DESTROY THAT GREAT STATE.  OUR GOV..."<br>(<a href="https://t.co/VLoAEa7e7r" target="_blank">Tweet</a>)<br>', {maxWidth: "100"})},
+
+
+        help_mark1: {layer: L.marker([48.214817, -122.330602]).bindPopup('<left><br>Seattle, Washington<br><br>', {maxWidth: "100"})},
+        help_mark1: {layer: L.marker([48.214817, -122.330602]).bindPopup('<left><br>Portland, Oregon<br><br>', {maxWidth: "100"})},
+        help_mark1: {layer: L.marker([34.020789, -118.411907]).bindPopup('<left><br>Los Angeles, California<br><br>', {maxWidth: "100"})},
+        help_mark1: {layer: L.marker([40.680477, -73.998244]).bindPopup('<left><br>New York, New York<br><br>', {maxWidth: "100"})},
+        help_mark1: {layer: L.marker([48.214817, -122.330602]).bindPopup('<left><br>Washington D.C<br><br>', {maxWidth: "100"})},
+        help_mark1: {layer: L.marker([48.214817, -122.330602]).bindPopup('<left><br>Atlanta, Georgia<br><br>', {maxWidth: "100"})},
+        help_mark1: {layer: L.marker([48.214817, -122.330602]).bindPopup('<left><br>Minneapolis, Minnesota<br><br>', {maxWidth: "100"})},
+
+
+        satellite: {
+            layer: L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+                id: 'mapbox.satellite'
+            })
+        },
+        cartodb_light: {layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')}
+    };
+
+    var scenes = {
+        overview: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'Cover Page', layers: []},
+        blm: {lat: 41.2664637, lng: -111.7176503, zoom: 3.5, name: 'For', layers: [layers.blm_mark1, layers.blm_mark2, layers.blm_mark3, layers.blm_mark4, layers.blm_mark5, layers.blm_mark6,
+        layers.blm_mark7, layers.blm_mark8, layers.blm_mark9, layers.blm_mark10, layers.blm_mark11,layers.blm_mark12, layers.blm_mark13, layers.blm_mark14, layers.blm_mark15, layers.blm_mark16,
+        layers.blm_mark16, layers.blm_mark17, layers.blm_mark18, layers.blm_mark19, layers.blm_mark20, layers.blm_mark21]},
+        Opposition: {lat: 41.2664637, lng: -111.7176503, zoom: 3.5, name: 'Oppose', layers: [layers.alm_mark1, layers.alm_mark2, layers.alm_mark3, layers.alm_mark4, layers.alm_mark5,
+        layers.alm_mark6, layers.alm_mark7, layers.alm_mark8, layers.alm_mark9,layers.alm_mark10, layers.alm_mark11, layers.alm_mark12,layers.alm_mark13 ]},
+        comparison: {lat: 41.2664637, lng: -111.7176503, zoom: 3.5, name: 'Compare', layers: [layers.blm_mark1, layers.blm_mark2, layers.blm_mark3, layers.blm_mark4, layers.blm_mark5, layers.blm_mark6,
+        layers.blm_mark7, layers.blm_mark8, layers.blm_mark9, layers.blm_mark10, layers.blm_mark11,layers.blm_mark12, layers.blm_mark13, layers.blm_mark14, layers.blm_mark15, layers.blm_mark16,
+        layers.blm_mark16, layers.blm_mark17, layers.blm_mark18, layers.blm_mark19, layers.blm_mark20, layers.blm_mark21, layers.alm_mark1, layers.alm_mark2, layers.alm_mark3, layers.alm_mark4, layers.alm_mark5,
+        layers.alm_mark6, layers.alm_mark7, layers.alm_mark8, layers.alm_mark9,layers.alm_mark10, layers.alm_mark11, layers.alm_mark12,layers.alm_mark13]},
+        Help: {lat: 41.2664637, lng: -111.7176503, zoom: 3.5, name: 'Help', layers: []},
+        end: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'The End'}
+    };
+
+    $('#storymap').storymap({
+        scenes: scenes,
+        baselayer: layers.cartodb_light,
+        legend: true, // if you do not want a legend feature, you can simply not define the createLegend function.
+        credits: "",
+        loader: true,
+        scalebar: false,
+        fly: true,
+        navwidget: true,
+
+        createMap: function () {
+            // create a map in the "map" div, set the view to a given place and zoom
+            var map = L.map($(".storymap-map")[0], {
+                zoomControl: false, scrollWheelZoom: false, fadeAnimation: true,
+                zoomAnimation: true
+            }).setView([44, -120], 7);
+
+            //add an miniglobe
+            // new L.Control.GlobeMiniMap({
+          //      marker: 'red',
+            //    position: 'bottomright'
+            //}).addTo(map);
+
+
+            return map;
+        }
+    });
+</script>
+</body>
+</html>
